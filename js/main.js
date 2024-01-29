@@ -38,7 +38,41 @@ function tinhTongSoDuong()
 
         return tong;
     } else {
-        // Mảng rỗng | hoặc không có số dương trong mảng , return -1
+        // Mảng rỗng return -1
+        return -1;
+    }
+}
+
+
+
+
+
+/**
+ * 2. Đếm có bao nhiêu số dương trong mangN
+ */
+ document.getElementById("btnDemSoDuong").onclick = function() {
+    let demSoDuong = tinhDemSoDuong();
+
+    // In ket quả
+    let txtResult = document.getElementById('txtResultDemSoDuong');
+    txtResult.innerHTML = `<br /> Có ${demSoDuong} số dương xuất hiện trong mảng`;
+}
+
+// Đếm có bao nhiêu số dương có trong mangN
+function tinhDemSoDuong()
+{
+    // Kiểm tra mảng khác rỗng
+    if (mangN.length > 0) {
+        let count = 0;    
+        for (let i = 0; i < mangN.length; i++) {
+            if (mangN[i] > 0) {
+                count++;
+            }
+        }
+
+        return count;
+    } else {
+        // Mảng rỗng return -1
         return -1;
     }
 }
