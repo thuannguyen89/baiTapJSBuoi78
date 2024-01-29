@@ -17,8 +17,57 @@
 <body>
     <div class="container">
         <h1>Bài Tập JS Buổi 7-8</h1>
+
+        <p>Cho người dùng nhập vào các số nguyên và luu trữ trong mảng.</p>
+        <p>Thiết kế Layout cho người dùng chọn thực hiện các chức năng bên dưới</p>
+        <ul>
+            <li>Tổng các số dương trong mảng</li>
+            <li>Đếm có bao nhiêu số dương trong mảng</li>
+            <li>Tìm số nhỏ nhất trong mảng</li>
+            <li>Tìm số dương nhỏ nhất trong mảng</li>
+            <li>Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn thì trả về -1</li>
+            <li>Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị)</li>
+            <li>Sắp xếp mảng theo thứ tự tăng dần</li>
+            <li>Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tó thì trả về -1</li>
+            <li>Nhập thêm 1 mảng só thực, tìm xem trong mảng có bao nhiêu số nguyên</li>
+            <li>Số sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn</li>
+        </ul>
     </div>
-    
+
+    <div class="container">
+        <div class="row">
+            <form>
+                <div class="form-group">
+                    <label for="">Nhập vào các số nguyên</label>
+                    <input type="number" class="form-control" id="soN" placeholder="Nhập vào các số nguyên">
+                </div>
+
+                <button type="button" class="btn btn-primary" id="btnLuuMang">Lưu vào mảng</button>
+                <p class="alert alert-info txtResult" id="txtResultLuuMang"></p>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active" id="v-pills-tab1-tab" data-toggle="pill" data-target="#v-pills-tab1"
+                        type="button" role="tab" aria-controls="v-pills-tab1" aria-selected="true">1. Tổng số
+                        dương</button>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-tab1" role="tabpanel"
+                        aria-labelledby="v-pills-tab1-tab">
+                        <h3>1. Tính tổng các số dương trong mảng</h3>
+
+                        <button class="btn btn-success" id="btnTongSoDuong">Tổng số dương</button>
+                        <p class="alert alert-info txtResult" id="txtResultTongSoDuong"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Jquery Min JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
