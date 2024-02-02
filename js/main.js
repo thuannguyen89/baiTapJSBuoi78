@@ -113,3 +113,47 @@ function timSoNhoNhat()
         return '';
     }
 }
+
+
+
+
+
+
+/**
+ * 4. Tìm số dương nhỏ nhất trong mangN
+ */
+ document.getElementById("btnTimSoDuongNhoNhat").onclick = function() {
+    let soDuongNhoNhat = timSoDuongNhoNhat();
+
+    // In ket quả
+    let txtResult = document.getElementById('txtResultSoDuongNhoNhat');
+    if (soDuongNhoNhat === '') {
+        txtResult.innerHTML = `<br /> Không tìm thấy số dương nhỏ nhất trong mảng`;
+    } else {
+        txtResult.innerHTML = `<br /> Số dương nhỏ nhất trong mảng là số  ${soDuongNhoNhat}`;
+    }
+    
+}
+
+// Tìm số dương nhỏ nhất trong mangN
+function timSoDuongNhoNhat()
+{
+    // Kiểm tra mảng khác rỗng
+    if (mangN.length > 0) {
+        let soDuongNhoNhat = '';    
+        for (let i = 0; i < mangN.length; i++) {
+            if (mangN[i] > 0) {
+                if (soDuongNhoNhat === '') {
+                    soDuongNhoNhat = mangN[i];
+                } else if (mangN[i] < soDuongNhoNhat) {
+                    soDuongNhoNhat = mangN[i];
+                }
+            }
+        }
+
+        return soDuongNhoNhat;
+    } else {
+        // Mảng rỗng return ''
+        return '';
+    }
+}
