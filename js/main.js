@@ -76,3 +76,40 @@ function tinhDemSoDuong()
         return -1;
     }
 }
+
+
+
+
+
+
+/**
+ * 3. Tìm số nhỏ nhất trong mangN
+ */
+ document.getElementById("btnTimSoNhoNhat").onclick = function() {
+    let soNhoNhat = timSoNhoNhat();
+
+    // In ket quả
+    let txtResult = document.getElementById('txtResultSoNhoNhat');
+    txtResult.innerHTML = `<br /> Số nhỏ nhất trong mảng là số  ${soNhoNhat}`;
+}
+
+// Tìm số nhỏ nhất trong mangN
+function timSoNhoNhat()
+{
+    // Kiểm tra mảng khác rỗng
+    if (mangN.length > 0) {
+        let soNhoNhat = '';    
+        for (let i = 0; i < mangN.length; i++) {
+            if (i == 0) {
+                soNhoNhat = mangN[i];
+            } else if (mangN[i] < soNhoNhat) {
+                soNhoNhat = mangN[i];
+            }
+        }
+
+        return soNhoNhat;
+    } else {
+        // Mảng rỗng return ''
+        return '';
+    }
+}
