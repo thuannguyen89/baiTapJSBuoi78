@@ -228,3 +228,32 @@ function doiViTri2So(vitri1, vitri2) {
     mangN[vitri1] = mangN[vitri2];
     mangN[vitri2] = tempValue;
 }
+
+
+
+
+
+
+/**
+ * 7. Sắp xếp mảng tăng dần
+ */
+ document.getElementById("btnSapMangTangDan").onclick = function () {
+    let soChanCuoiCung = sapXepMangTangDan();
+
+    // In ket quả
+    let txtResult = document.getElementById('txtResultSapMangTangDan');
+    txtResult.innerHTML = `<br /> Số chẵn cuối cùng trong mảng là số  ${mangN.join()}`;
+}
+
+// Sắp xếp mảng tăng dần
+function sapXepMangTangDan() {
+    for (let i = 0; i < mangN.length; i++) {
+        for (let j = i + 1; j < mangN.length; j++) {
+            if (mangN[i] > mangN[j]) {
+                let temp = mangN[i];
+                mangN[i] = mangN[j];
+                mangN[j] = temp;
+            }
+        }
+    }
+}
