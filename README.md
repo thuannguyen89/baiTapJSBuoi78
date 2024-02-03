@@ -3,3 +3,4 @@
 # 2. Dem co bao nhieu so duong trong mang
 # 3. Tim so nho nhat trong mang
 # 4. Tim so duong nho nhat trong mang
+# 5. Tim so chan cuoi cung trong mang

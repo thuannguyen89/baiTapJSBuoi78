@@ -157,3 +157,35 @@ function timSoDuongNhoNhat()
         return '';
     }
 }
+
+
+
+
+
+
+/**
+ * 4. Tìm số chẵn cuối cùng trong mangN
+ */
+ document.getElementById("btnTimSoChanCuoiCung").onclick = function() {
+    let soChanCuoiCung = timSoChanCuoiCung();
+
+    // In ket quả
+    let txtResult = document.getElementById('txtResultSoChanCuoiCung');
+    txtResult.innerHTML = `<br /> Số chẵn cuối cùng trong mảng là số  ${soChanCuoiCung}`;
+}
+
+// Tìm số chẵn cuối cùng trong mangN
+function timSoChanCuoiCung()
+{
+    let soChanCuoiCung = -1; 
+    // Kiểm tra mảng khác rỗng
+    if (mangN.length > 0) {   
+        for (let i = 0; i < mangN.length; i++) {
+            if (mangN[i] % 2 == 0) {
+                soChanCuoiCung = mangN[i];
+            }
+        }
+    }
+
+    return soChanCuoiCung;
+}
