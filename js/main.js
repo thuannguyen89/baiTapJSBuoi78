@@ -2,12 +2,12 @@
 var mangN = [];
 
 // Nhận giá trị n nhập vào và lưu vào mảng
-document.getElementById("btnLuuMang").onclick = function() {
+document.getElementById("btnLuuMang").onclick = function () {
     let soN = document.getElementById("soN").value;
 
     // Thêm soN vào mangN
     mangN.push(Number(soN));
-    
+
     // In danh sách đã lưu ra màn hình
     let txtResult = document.getElementById('txtResultLuuMang');
     txtResult.innerHTML = `<br /> Danh sách mảng đã lưu : ${mangN}`;
@@ -16,7 +16,7 @@ document.getElementById("btnLuuMang").onclick = function() {
 /**
  * 1. Tính tổng các số dương trong mangN
  */
- document.getElementById("btnTongSoDuong").onclick = function() {
+document.getElementById("btnTongSoDuong").onclick = function () {
     let tongSoDuong = tinhTongSoDuong();
 
     // In ket quả
@@ -25,11 +25,10 @@ document.getElementById("btnLuuMang").onclick = function() {
 }
 
 // Tinh tổng tất cả các số dương có trong mangN
-function tinhTongSoDuong()
-{
+function tinhTongSoDuong() {
     // Kiểm tra mảng khác rỗng
     if (mangN.length > 0) {
-        let tong = 0;    
+        let tong = 0;
         for (let i = 0; i < mangN.length; i++) {
             if (mangN[i] > 0) {
                 tong += Number(mangN[i]);
@@ -50,7 +49,7 @@ function tinhTongSoDuong()
 /**
  * 2. Đếm có bao nhiêu số dương trong mangN
  */
- document.getElementById("btnDemSoDuong").onclick = function() {
+document.getElementById("btnDemSoDuong").onclick = function () {
     let demSoDuong = tinhDemSoDuong();
 
     // In ket quả
@@ -59,11 +58,10 @@ function tinhTongSoDuong()
 }
 
 // Đếm có bao nhiêu số dương có trong mangN
-function tinhDemSoDuong()
-{
+function tinhDemSoDuong() {
     // Kiểm tra mảng khác rỗng
     if (mangN.length > 0) {
-        let count = 0;    
+        let count = 0;
         for (let i = 0; i < mangN.length; i++) {
             if (mangN[i] > 0) {
                 count++;
@@ -85,7 +83,7 @@ function tinhDemSoDuong()
 /**
  * 3. Tìm số nhỏ nhất trong mangN
  */
- document.getElementById("btnTimSoNhoNhat").onclick = function() {
+document.getElementById("btnTimSoNhoNhat").onclick = function () {
     let soNhoNhat = timSoNhoNhat();
 
     // In ket quả
@@ -94,11 +92,10 @@ function tinhDemSoDuong()
 }
 
 // Tìm số nhỏ nhất trong mangN
-function timSoNhoNhat()
-{
+function timSoNhoNhat() {
     // Kiểm tra mảng khác rỗng
     if (mangN.length > 0) {
-        let soNhoNhat = '';    
+        let soNhoNhat = '';
         for (let i = 0; i < mangN.length; i++) {
             if (i == 0) {
                 soNhoNhat = mangN[i];
@@ -122,7 +119,7 @@ function timSoNhoNhat()
 /**
  * 4. Tìm số dương nhỏ nhất trong mangN
  */
- document.getElementById("btnTimSoDuongNhoNhat").onclick = function() {
+document.getElementById("btnTimSoDuongNhoNhat").onclick = function () {
     let soDuongNhoNhat = timSoDuongNhoNhat();
 
     // In ket quả
@@ -132,15 +129,14 @@ function timSoNhoNhat()
     } else {
         txtResult.innerHTML = `<br /> Số dương nhỏ nhất trong mảng là số  ${soDuongNhoNhat}`;
     }
-    
+
 }
 
 // Tìm số dương nhỏ nhất trong mangN
-function timSoDuongNhoNhat()
-{
+function timSoDuongNhoNhat() {
     // Kiểm tra mảng khác rỗng
     if (mangN.length > 0) {
-        let soDuongNhoNhat = '';    
+        let soDuongNhoNhat = '';
         for (let i = 0; i < mangN.length; i++) {
             if (mangN[i] > 0) {
                 if (soDuongNhoNhat === '') {
@@ -164,9 +160,9 @@ function timSoDuongNhoNhat()
 
 
 /**
- * 4. Tìm số chẵn cuối cùng trong mangN
+ * 5. Tìm số chẵn cuối cùng trong mangN
  */
- document.getElementById("btnTimSoChanCuoiCung").onclick = function() {
+document.getElementById("btnTimSoChanCuoiCung").onclick = function () {
     let soChanCuoiCung = timSoChanCuoiCung();
 
     // In ket quả
@@ -175,11 +171,10 @@ function timSoDuongNhoNhat()
 }
 
 // Tìm số chẵn cuối cùng trong mangN
-function timSoChanCuoiCung()
-{
-    let soChanCuoiCung = -1; 
+function timSoChanCuoiCung() {
+    let soChanCuoiCung = -1;
     // Kiểm tra mảng khác rỗng
-    if (mangN.length > 0) {   
+    if (mangN.length > 0) {
         for (let i = 0; i < mangN.length; i++) {
             if (mangN[i] % 2 == 0) {
                 soChanCuoiCung = mangN[i];
@@ -188,4 +183,48 @@ function timSoChanCuoiCung()
     }
 
     return soChanCuoiCung;
+}
+
+
+
+
+
+/**
+ * 6. Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị)
+ */
+document.getElementById("btnDoiViTri2So").onclick = function () {
+    // Lay vi tri 1 và 2 , nguoi dung nhập vào
+    let vitri1 = Number(document.getElementById('vitri1').value);
+    let vitri2 = Number(document.getElementById('vitri2').value);
+
+    // Kiểm tra index nhập vào có tồn tại trong mangN
+    if (!kiemTraViTriCoTonTaiTrongMangN(vitri1) || !kiemTraViTriCoTonTaiTrongMangN(vitri2)) {
+        return;
+    } else {
+        // Dổi vị trí 2 số
+        doiViTri2So(vitri1, vitri2);
+        let mangNString = mangN.join();
+
+        // In ket quả
+        let txtResult = document.getElementById('txtResultDoiViTri2So');
+        txtResult.innerHTML = `<br /> Mảng sau khi đổi vị trí 2 số  : ${mangNString}`;
+    }
+}
+
+// Kiểm tra vị trí nhập vào có tồn tại trong mangN
+function kiemTraViTriCoTonTaiTrongMangN(vitri) {
+    if (!mangN[vitri]) {
+        alert('Không tồn tại vị trí này. Vui lòng nhập lại vị trí.');
+        return false;
+    }
+
+    return true;
+}
+
+// Đổi vị trí 2 số trong mangN
+function doiViTri2So(vitri1, vitri2) {
+    // Hoán đổi vị trí
+    let tempValue = mangN[vitri1];
+    mangN[vitri1] = mangN[vitri2];
+    mangN[vitri2] = tempValue;
 }
