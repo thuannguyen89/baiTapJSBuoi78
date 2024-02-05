@@ -8,3 +8,4 @@
 # 7. Sap xep mang tang dan
 # 8. Tim so nguyen dau tien trong mang
 # 9. Dem so nguyen trong mang
+# 10. So sanh so luong so duong va am trong mang

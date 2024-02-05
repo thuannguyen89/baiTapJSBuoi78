@@ -357,3 +357,46 @@ function demSoNguyenTo() {
 
     return soNguyenTo;
 }
+
+/**
+ * 10. So sánh số lượng số dương và âm trong mangN
+ */
+document.getElementById("btnSoSanhDuongAm").onclick = function () {
+    let ketQuaSoSanh = soSanhDuongAm();
+
+    // In ket quả
+    let txtResult = document.getElementById('txtResultSoSanhDuongAm');
+    if (ketQuaSoSanh === '') {
+        txtResult.innerHTML = `<br /> Trong mảng rỗng, không thể so sánh. Vui lòng nhập số vào mảng.`;
+    } else {
+        txtResult.innerHTML = `<br /> Số  lượng số  dương <b>${ketQuaSoSanh}</b> số lượng số âm trong mảng`;
+    }
+}
+
+// So sánh số lượng dương và âm
+function soSanhDuongAm() {
+    let ketQuaSoSanh = '';
+    let soLuongSoDuong = 0;
+    let soLuongSoAm = 0;
+
+    // Kiểm tra mảng khác rỗng
+    if (mangN.length > 0) {
+        for (let i = 0; i < mangN.length; i++) {
+            if (mangN[i] > 0) {
+                soLuongSoDuong += 1;
+            } else if (mangN[i] < 0) {
+                soLuongSoAm += 1;
+            }
+        }
+
+        if (soLuongSoDuong > soLuongSoAm) {
+            ketQuaSoSanh = '>';
+        } else if (soLuongSoDuong < soLuongSoAm) {
+            ketQuaSoSanh = '<';
+        } else {
+            ketQuaSoSanh = '=';
+        }
+    }
+
+    return ketQuaSoSanh;
+}
