@@ -6,3 +6,4 @@
 # 5. Tim so chan cuoi cung trong mang
 # 6. Doi vi tri 2 so trong mang
 # 7. Sap xep mang tang dan
+# 8. Tim so nguyen dau tien trong mang

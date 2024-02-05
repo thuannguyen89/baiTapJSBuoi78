@@ -238,11 +238,12 @@ function doiViTri2So(vitri1, vitri2) {
  * 7. Sắp xếp mảng tăng dần
  */
  document.getElementById("btnSapMangTangDan").onclick = function () {
-    let soChanCuoiCung = sapXepMangTangDan();
+    // Gọi hàm sắp xếp mảng
+    sapXepMangTangDan();
 
     // In ket quả
     let txtResult = document.getElementById('txtResultSapMangTangDan');
-    txtResult.innerHTML = `<br /> Số chẵn cuối cùng trong mảng là số  ${mangN.join()}`;
+    txtResult.innerHTML = `<br /> Mảng sau khi sắp xếp tăng dần : ${mangN.join()}`;
 }
 
 // Sắp xếp mảng tăng dần
@@ -256,4 +257,58 @@ function sapXepMangTangDan() {
             }
         }
     }
+}
+
+
+
+
+
+/**
+ * 8. Tìm số nguyên tố đầu tiên trong mangN
+ */
+ document.getElementById("btnTimSoNuyenToDauTien").onclick = function () {
+    let soNguyenToDauTien = timSoNuyenToDauTien();
+
+    // In ket quả
+    let txtResult = document.getElementById('txtResultTimSoNuyenToDauTien');
+    txtResult.innerHTML = `<br /> Số  nguyên tố đầu tiên trong mảng là số  ${soNguyenToDauTien}`;
+}
+
+// Tìm số nguỵện tố đầu tiên
+function timSoNuyenToDauTien(n) {
+    let soNguyenToDauTien = -1;
+    // Kiểm tra mảng khác rỗng
+    if (mangN.length > 0) {
+        for (let i = 0; i < mangN.length; i++) {
+            let flag = true;
+
+            // Neu < 2 , mangN[i] khong phai la so nguyen to
+            if (mangN[i] < 2) {
+                flag = false;
+            } else if (mangN[i] === 2) {
+                // Neu mangN[i] == 2, thi 2 chac chan la so nguyen to
+                flag = true;
+            } else if (mangN[i] % 2 === 0) {
+                // Neu mangN[i] > 2 va chia het cho 2 , thi mangN[i] khong phai la so nguyen to
+                flag = false;
+            } else {
+                // Lap tu 3 toi mangN[i] - 1 voi buoc nhay j+=2
+                for (let j = 3; j < mangN[i] - 1; j+=2) {
+                    // Neu mangN[i] chia het cho bat ky so nao < mangN[i] thi khong phai la so nguyen to
+                    if (mangN[i] % j === 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+
+            // Neu flag == true, mang[i] la so nguyen to
+            if (flag === true) {
+                soNguyenToDauTien = mangN[i];
+                break;
+            }
+        }
+    }
+
+    return soNguyenToDauTien;
 }
