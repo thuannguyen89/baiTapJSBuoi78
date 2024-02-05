@@ -7,3 +7,4 @@
 # 6. Doi vi tri 2 so trong mang
 # 7. Sap xep mang tang dan
 # 8. Tim so nguyen dau tien trong mang
+# 9. Dem so nguyen trong mang

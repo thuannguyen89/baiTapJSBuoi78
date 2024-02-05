@@ -237,7 +237,7 @@ function doiViTri2So(vitri1, vitri2) {
 /**
  * 7. Sắp xếp mảng tăng dần
  */
- document.getElementById("btnSapMangTangDan").onclick = function () {
+document.getElementById("btnSapMangTangDan").onclick = function () {
     // Gọi hàm sắp xếp mảng
     sapXepMangTangDan();
 
@@ -266,7 +266,7 @@ function sapXepMangTangDan() {
 /**
  * 8. Tìm số nguyên tố đầu tiên trong mangN
  */
- document.getElementById("btnTimSoNuyenToDauTien").onclick = function () {
+document.getElementById("btnTimSoNuyenToDauTien").onclick = function () {
     let soNguyenToDauTien = timSoNuyenToDauTien();
 
     // In ket quả
@@ -275,7 +275,7 @@ function sapXepMangTangDan() {
 }
 
 // Tìm số nguỵện tố đầu tiên
-function timSoNuyenToDauTien(n) {
+function timSoNuyenToDauTien() {
     let soNguyenToDauTien = -1;
     // Kiểm tra mảng khác rỗng
     if (mangN.length > 0) {
@@ -293,7 +293,7 @@ function timSoNuyenToDauTien(n) {
                 flag = false;
             } else {
                 // Lap tu 3 toi mangN[i] - 1 voi buoc nhay j+=2
-                for (let j = 3; j < mangN[i] - 1; j+=2) {
+                for (let j = 3; j < mangN[i] - 1; j += 2) {
                     // Neu mangN[i] chia het cho bat ky so nao < mangN[i] thi khong phai la so nguyen to
                     if (mangN[i] % j === 0) {
                         flag = false;
@@ -311,4 +311,49 @@ function timSoNuyenToDauTien(n) {
     }
 
     return soNguyenToDauTien;
+}
+
+
+
+
+
+/**
+ * 9. Đếm số nguyên xuất hiện trong mangN2
+ */
+// Tạo biến Global để lưu các giá trị n vào mangN2
+var mangN2 = [];
+
+// Nhận giá trị n nhập vào và lưu vào mảng
+document.getElementById("btnLuuMang2").onclick = function () {
+    let soN2 = document.getElementById("soN2").value;
+
+    // Thêm soN2 vào mangN2
+    mangN2.push(Number(soN2));
+
+    // In danh sách đã lưu ra màn hình
+    let txtResult = document.getElementById('txtResultLuuMang2');
+    txtResult.innerHTML = `<br /> Danh sách mảng đã lưu : ${mangN2}`;
+}
+
+document.getElementById("btnDemSoNguyen").onclick = function () {
+    let soNguyenTo = demSoNguyenTo();
+
+    // In ket quả
+    let txtResult = document.getElementById('txtResultDemSoNguyen');
+    txtResult.innerHTML = `<br /> Có ${soNguyenTo} nguyên tố  trong mảng`;
+}
+
+// Đếm số nguỵện tố trong mảng
+function demSoNguyenTo() {
+    let soNguyenTo = 0;
+    // Kiểm tra mảng khác rỗng
+    if (mangN2.length > 0) {
+        for (let i = 0; i < mangN2.length; i++) {
+            if (Number.isInteger(mangN2[i])) {
+                soNguyenTo += 1;
+            }
+        }
+    }
+
+    return soNguyenTo;
 }
